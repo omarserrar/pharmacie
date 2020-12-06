@@ -1,5 +1,7 @@
 package views;
 
+import java.util.ArrayList;
+
 import controllers.PharmacieController;
 import models.pharmacie.Pharmacie;
 
@@ -17,13 +19,16 @@ public class PharmacieView extends View {
 		menuPrincipale.ajouterElementMenu("Pharmacie Franchise");
 		return menuPrincipale.openMenu();
 	}
-	public int selectPharmacieFranchisee() {
-		PharmacieController pharmacieController = PharmacieController.getPharmacieController();
+	public int selectPharmacie(String titre, ArrayList<Pharmacie> pharmacies, boolean aucune) {
+		System.out.println(titre);
 		Menu menu = new Menu();
-		menu.ajouterElementMenu("Aucune");
-		for(Pharmacie pharmacie: pharmacieController.getPharmacies()) {
+		if(aucune)
+			menu.ajouterElementMenu("Aucune / Retour");
+		for(Pharmacie pharmacie: pharmacies) {
 			menu.ajouterElementMenu(pharmacie.getNom());
 		}
+		if(aucune)
+			return menu.openMenu()-1;
 		return menu.openMenu();
 	}
 	

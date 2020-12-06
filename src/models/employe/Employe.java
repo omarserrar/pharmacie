@@ -11,4 +11,7 @@ public abstract class Employe {
 		this.adresse = adresse;
 	}
 	public abstract int getSalaire();
+	public String toString() {
+		return nom+" "+prenom;
+	}
 }

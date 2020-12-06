@@ -12,6 +12,9 @@ public class Pharmacie {
 	private String siret;
 	private Pharmacien pharmacien;
 	private ArrayList<Employe> employes = new ArrayList();
+	public Pharmacie() {
+		
+	}
 	public Pharmacie(String nom, int nombreEmployees, int surfaceCommerciel, String siret, Pharmacien pharmacien) {
 		super();
 		this.nom = nom;
@@ -19,7 +22,6 @@ public class Pharmacie {
 		this.surfaceCommerciel = surfaceCommerciel;
 		this.siret = siret;
 		this.pharmacien = pharmacien;
-		addEmploye(pharmacien);
 	}
 	
 	public boolean addEmploye(Employe employe) {
@@ -70,5 +72,16 @@ public class Pharmacie {
 	public ArrayList<Employe> getEmployes() {
 		return employes;
 	}
-	
+	public String toString() {
+		String info = "Nom:\t"+nom+"\n";
+		info += "SIRET:\t"+siret+"\n";
+		info += "Nombre Employees:\t"+nombreEmployees+"\n";
+		info += "Surface:\t"+surfaceCommerciel+"\n";
+		info += "Pharmacien:\t"+pharmacien+"\n";
+		info += "Employees:\n";
+		for(Employe employe: employes) {
+			info += "\t"+employe;
+		}
+		return info;
+	}
 }

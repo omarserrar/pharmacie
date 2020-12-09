@@ -7,6 +7,10 @@ import models.compteBancaire.CompteBancaireFranchise;
 import models.employe.Pharmacien;
 
 public class PharmacieFranchisee extends Pharmacie {
+	public void setFranchises(ArrayList<PharmacieFranchisee> franchises) {
+		this.franchises = franchises;
+	}
+
 	ArrayList<PharmacieFranchisee> franchises = new ArrayList();
 	PharmacieFranchisee pharmacieMere;
 	private CompteBancaireFranchise compteBancaireFranchise;
@@ -48,17 +52,7 @@ public class PharmacieFranchisee extends Pharmacie {
 	}
 
 	public String toString() {
-		String info = super.toString()+"\n";
-		info += "Compte Bancaire Classique:\t"+((compteBancaireClassique!=null)?compteBancaireClassique.getSolde():"Aucun")+"\n";
-		info += "Compte Bancaire Franchise:\t"+((compteBancaireFranchise!=null)?compteBancaireFranchise.getSolde():"Aucun")+"\n";
-		info+= "Pharmacie Mere:\t"+((pharmacieMere!=null)?pharmacieMere.getNom():"Aucune")+"\n";
-		info+="Franchises:\t"+franchises.size()+":\n";
-		if(franchises.size()>0) {
-			for(PharmacieFranchisee pharmacieFranchisee: franchises) {
-				info+="\t"+pharmacieFranchisee.getNom()+"\n";
-			}
-		}
-		return info;
+		return nom;
 	}
 	
 }

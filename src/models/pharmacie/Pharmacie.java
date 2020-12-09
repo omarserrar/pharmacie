@@ -6,7 +6,7 @@ import models.employe.Employe;
 import models.employe.Pharmacien;
 
 public class Pharmacie {
-	private String nom;
+	protected String nom;
 	private int nombreEmployees;
 	private int surfaceCommerciel;
 	private String siret;

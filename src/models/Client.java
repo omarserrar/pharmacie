@@ -1,22 +1,21 @@
 package models;
 
+import models.carteBancaire.CarteBancaire;
+import models.carteBancaire.CarteBancaireClassique;
+import models.carteBancaire.CarteBancairePharmacie;
+
 public class Client {
 
     private String nom;
     private String prenom;
-    private String age;
-    private String num_ss;
-    private String maladie;
-    private String traitement;
+    private CarteBancaireClassique carteBancaireClassique;
+    private CarteBancairePharmacie carteBancairePharmacie;
+    
 
-    public Client(String nom, String prenom,String age, String num_ss, String maladie, String traitement) {
+    public Client(String nom, String prenom) {
         super();
         this.nom = nom;
         this.prenom = prenom;
-        this.age = age;
-        this.num_ss = num_ss;
-        this.maladie = maladie;
-        this.traitement = traitement;
     }
 
     public String getNom() {
@@ -35,37 +34,30 @@ public class Client {
         this.prenom = prenom;
     }
 
-    public String getAge() {
-        return age;
-    }
+	public Client(String nom, String prenom, CarteBancaireClassique carteBancaireClassique,
+			CarteBancairePharmacie carteBancairePharmacie) {
+		super();
+		this.nom = nom;
+		this.prenom = prenom;
+		this.carteBancaireClassique = carteBancaireClassique;
+		this.carteBancairePharmacie = carteBancairePharmacie;
+	}
 
-    public void setAge(String age) {
-        this.age = age;
-    }
+	public CarteBancaireClassique getCarteBancaireClassique() {
+		return carteBancaireClassique;
+	}
 
-    public String getNum_ss() {
-        return num_ss;
-    }
+	public void setCarteBancaireClassique(CarteBancaireClassique carteBancaireClassique) {
+		this.carteBancaireClassique = carteBancaireClassique;
+	}
 
-    public void setNum_ss(String num_ss) {
-        this.num_ss = num_ss;
-    }
+	public CarteBancairePharmacie getCarteBancairePharmacie() {
+		return carteBancairePharmacie;
+	}
 
-    public String getMaladie() {
-        return maladie;
-    }
-
-    public void setMaladie(String maladie) {
-        this.maladie = maladie;
-    }
-
-    public String getTraitement() {
-        return traitement;
-    }
-
-    public void setTraitement(String traitement) {
-        this.traitement = traitement;
-    }
-
+	public void setCarteBancairePharmacie(CarteBancairePharmacie carteBancairePharmacie) {
+		this.carteBancairePharmacie = carteBancairePharmacie;
+	}
+    
 
 }

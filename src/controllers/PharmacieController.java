@@ -17,8 +17,7 @@ import views.PharmacieView;
 public class PharmacieController extends Controller{
 	private static PharmacieController pharmacieController = null;
 	private PharmacieView pharmacieView = new PharmacieView();
-	private ArrayList<Pharmacie> pharmacies = new ArrayList<>();
-	private ArrayList<Pharmacie> pharmaciesFranchisees = new ArrayList<>();
+
 	private PharmacieController() {
 		
 	}

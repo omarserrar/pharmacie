@@ -13,7 +13,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("../views/Menu.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("../views/ListePharmacieFranchise.fxml"));
             Scene scene = new Scene(root);
             primaryStage.setTitle("Gestion de Pharmacie");
             primaryStage.setScene(scene);
@@ -25,6 +25,6 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
-        //launch(args);
+        launch(args);
     }
 }

@@ -1,12 +1,30 @@
 package Main;
 import controllers.PharmacieController;
-import views.Menu;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-public class Main {
+public class Main extends Application {
 
-	public static void main(String[] args) {
-		PharmacieController pharmacieController = PharmacieController.getPharmacieController();
-		pharmacieController.pharmacieMenuPrincipale();
-	}
+	PharmacieController pharmacieController = PharmacieController.getPharmacieController();
+	
+    @Override
+    public void start(Stage primaryStage) throws Exception{
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("../views/Menu.fxml"));
+            Scene scene = new Scene(root);
+            primaryStage.setTitle("Gestion de Pharmacie");
+            primaryStage.setScene(scene);
+            scene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
+            primaryStage.show();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
 
+    public static void main(String[] args) {
+        //launch(args);
+    }
 }

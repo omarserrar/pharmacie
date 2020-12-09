@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="586.0" prefWidth="925.0" style="-fx-background-color: #d9e4dd;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.StockMedicamentController">
+      <children>
+      <Label layoutX="26.0" layoutY="63.0" text="Nom" />
+      <Label layoutX="28.0" layoutY="101.0" text="Type" />
+      <Label layoutX="27.0" layoutY="141.0" text="Mode de prise" />
+      <Label layoutX="28.0" layoutY="179.0" text="Quantite" />
+      <Label layoutX="27.0" layoutY="216.0" text="Numero de lot" />
+      <Label layoutX="28.0" layoutY="253.0" text="Prix" />
+      <Label layoutX="25.0" layoutY="294.0" text="Date expiration" />
+      <TextField fx:id="nomField" layoutX="138.0" layoutY="59.0" promptText="Nom Produit" style="-fx-background-radius: 10;" />
+      <TextField fx:id="typeField" layoutX="139.0" layoutY="97.0" promptText="Type Produit" style="-fx-background-radius: 10;" />
+      <TextField fx:id="modepriseField" layoutX="140.0" layoutY="137.0" promptText="Mode de prise" style="-fx-background-radius: 10;" />
+      <TextField fx:id="quantiteField" layoutX="139.0" layoutY="175.0" promptText="Quantite" style="-fx-background-radius: 10;" />
+      <TextField fx:id="numeroField" layoutX="141.0" layoutY="212.0" promptText="Numero" style="-fx-background-radius: 10;" />
+      <TextField fx:id="prixField" layoutX="139.0" layoutY="249.0" promptText="Prix" style="-fx-background-radius: 10;" />
+      <DatePicker fx:id="dateField" layoutX="141.0" layoutY="290.0" prefHeight="26.0" prefWidth="149.0" promptText="JJ/MM/AAAA" />
+      <Button layoutX="172.0" layoutY="530.0" mnemonicParsing="false" onAction="#ajouterProduitButtonClicked" prefHeight="26.0" prefWidth="127.0" style="-fx-background-radius: 25px; -fx-background-color: #2ec1ac;" text="Ajouter Produit" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Button>
+      <TableView fx:id="produitTable" layoutX="302.0" layoutY="104.0" prefHeight="371.0" prefWidth="620.0">
+        <columns>
+          <TableColumn fx:id="nom" onEditCommit="#changeNomCellEvent" prefWidth="63.20001220703125" text="Nom" />
+          <TableColumn fx:id="type" onEditCommit="#changeTypeCellEvent" prefWidth="71.0" text="Type" />
+            <TableColumn fx:id="modeprise" onEditCommit="#changeModePriseCellEvent" prefWidth="92.20001220703125" text="Mode de Prise" />
+            <TableColumn fx:id="quantite" onEditCommit="#changeQuantiteCellEvent" prefWidth="65.20001220703125" text="Quantite" />
+            <TableColumn fx:id="numero" onEditCommit="#changeNumeroCellEvent" prefWidth="66.5999755859375" text="N° Lot" />
+            <TableColumn fx:id="prix" onEditCommit="#changePrixCellEvent" prefWidth="76.4000244140625" text="Prix" />
+            <TableColumn fx:id="date" prefWidth="104.60003662109375" text="Date expiration" />
+            <TableColumn fx:id="rembourcement" onEditCommit="#changeTauxCellEvent" prefWidth="75.0" text="Rembourcement" />
+        </columns>
+      </TableView>
+      <Button layoutX="31.0" layoutY="530.0" mnemonicParsing="false" onAction="#supprimerProduitButtonClicked" prefHeight="26.0" prefWidth="127.0" style="-fx-background-radius: 25px; -fx-background-color: #ff4b5c;" text="Supprimer Produit" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Button>
+      <Label layoutX="24.0" layoutY="360.0" text="Production" />
+      <Label layoutX="23.0" layoutY="329.0" text="Ordonnance" />
+      <TextField fx:id="rechercheField" layoutX="462.0" layoutY="58.0" prefHeight="26.0" prefWidth="222.0" promptText="Entrer le nom de produit pour chercher" style="-fx-background-radius: 10;" />
+      <Button layoutX="17.0" layoutY="14.0" mnemonicParsing="false" onAction="#retourButtonClicked" prefHeight="26.0" prefWidth="90.0" style="-fx-background-radius: 25px; -fx-background-color: ec0101;" text="Retourner" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Button>
+      <Button layoutX="392.0" layoutY="483.0" mnemonicParsing="false" onAction="#DetaillerMedicament" prefHeight="26.0" prefWidth="149.0" style="-fx-background-radius: 25px; -fx-background-color: #6495ed;" text="Detailler Medicament" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="628.0" layoutY="483.0" mnemonicParsing="false" onAction="#ModifierMedicament" prefHeight="26.0" prefWidth="150.0" style="-fx-background-radius: 25px; -fx-background-color: #ffa500;" text="Modifier Medicament" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
+      <Label layoutX="394.0" layoutY="5.0" text="Gestion des Medicaments">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="ProdExtern" layoutX="107.0" layoutY="360.0" mnemonicParsing="false" onAction="#DeverouilleExterne" text="Externe">
+         <toggleGroup>
+            <ToggleGroup fx:id="Production" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="ProdInterne" layoutX="193.0" layoutY="360.0" mnemonicParsing="false" onAction="#DeverouilleInterne" text="Interne" toggleGroup="$Production" />
+      <RadioButton fx:id="ouiOrdonnance" layoutX="113.0" layoutY="329.0" mnemonicParsing="false" text="oui">
+         <toggleGroup>
+            <ToggleGroup fx:id="Ordonnance" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="nonOrdonnance" layoutX="198.0" layoutY="329.0" mnemonicParsing="false" text="non" toggleGroup="$Ordonnance" />
+      <Label layoutX="25.0" layoutY="391.0" text="Nom Firme" />
+      <Label layoutX="27.0" layoutY="420.0" text="Composants" />
+      <TextField fx:id="firmeField" layoutX="109.0" layoutY="387.0" promptText="Nom Firme" />
+      <TextArea fx:id="ComposantText" layoutX="108.0" layoutY="426.0" prefHeight="81.0" prefWidth="166.0" promptText="Composants..." />
+   </children>
+</AnchorPane>

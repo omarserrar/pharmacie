@@ -49,6 +49,8 @@ public class PharmacieFranchisee extends Pharmacie {
 
 	public String toString() {
 		String info = super.toString()+"\n";
+		info += "Compte Bancaire Classique:\t"+((compteBancaireClassique!=null)?compteBancaireClassique.getSolde():"Aucun")+"\n";
+		info += "Compte Bancaire Franchise:\t"+((compteBancaireFranchise!=null)?compteBancaireFranchise.getSolde():"Aucun")+"\n";
 		info+= "Pharmacie Mere:\t"+((pharmacieMere!=null)?pharmacieMere.getNom():"Aucune")+"\n";
 		info+="Franchises:\t"+franchises.size()+":\n";
 		if(franchises.size()>0) {

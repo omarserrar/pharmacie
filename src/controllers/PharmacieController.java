@@ -3,6 +3,8 @@ package controllers;
 import java.util.ArrayList;
 import java.util.Date;
 
+import models.compteBancaire.CompteBancaireClassique;
+import models.compteBancaire.CompteBancaireFranchise;
 import models.employe.Employe;
 import models.employe.Pharmacien;
 import models.employe.PreparateurCommande;
@@ -92,6 +94,7 @@ public class PharmacieController extends Controller{
 	}
 	public void ajouterPharmacieIndependente() {
 		PharmacieIndependente pharmacieIndependente = (PharmacieIndependente) creerPharmacie(new PharmacieIndependente());
+		pharmacieIndependente.setCompteBancaireClassique(createCBCla());
 		if(pharmacies.add(pharmacieIndependente))
 			System.out.println("Pharmacie Ajoute");
 		
@@ -100,7 +103,7 @@ public class PharmacieController extends Controller{
 		PharmacieFranchisee pharmacieFranchisee = (PharmacieFranchisee) creerPharmacie(new PharmacieFranchisee());
 		ajouterParent(pharmacieFranchisee);
 		ajouterPharmacieFranchiseeEnfant(pharmacieFranchisee);
-		
+		ajouterCompteBancairePharmacieFranchise(pharmacieFranchisee);
 		pharmaciesFranchisees.add(pharmacieFranchisee);
 		pharmacies.add(pharmacieFranchisee);
 	}
@@ -118,6 +121,33 @@ public class PharmacieController extends Controller{
 			pharmacieFranchisee.addFranchise(enfant);
 			enfant.setPharmacieMere(pharmacieFranchisee);
 		}
+	}
+	public void ajouterCompteBancairePharmacieFranchise(PharmacieFranchisee pharmacieFranchisee) {
+		int choix;
+		while((choix = pharmacieView.addCompteBancairePharmacieFranchisee(pharmacieFranchisee))!=0) {
+			switch(choix) {
+			case 1:{
+				pharmacieFranchisee.setCompteBancaireClassique(createCBCla());
+				break;
+			}
+			case 2:{
+				pharmacieFranchisee.setCompteBancaireFranchise(createCBFra());
+				break;
+			}
+			}
+		}
+	}
+	public CompteBancaireFranchise createCBFra() {
+		Menu menu = new Menu();
+		int solde = menu.getInt("Entrez le solde du compte franchise:");
+		CompteBancaireFranchise compteBancaireClassique = new CompteBancaireFranchise(solde);
+		return compteBancaireClassique;
+	}
+	public CompteBancaireClassique createCBCla() {
+		Menu menu = new Menu();
+		int solde = menu.getInt("Entrez le solde du compte classique:");
+		CompteBancaireClassique compteBancaireClassique = new CompteBancaireClassique(solde);
+		return compteBancaireClassique;
 	}
 	public ArrayList<Pharmacie> getPharmacies() {
 		return pharmacies;

@@ -3,6 +3,10 @@ package models.compteBancaire;
 public abstract class CompteBancaire {
 	private int solde;
 
+	public CompteBancaire(int solde) {
+		super();
+		this.solde = solde;
+	}
 	public int getSolde() {
 		return solde;
 	}

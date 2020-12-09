@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ClientDetail">
+   <children>
+      <Label layoutX="145.0" layoutY="76.0" text="Nom :" />
+      <Label layoutX="145.0" layoutY="119.0" text="Prenom :" />
+      <Label layoutX="145.0" layoutY="162.0" text="Age :" />
+      <Label layoutX="145.0" layoutY="215.0" text="Numero Securite Social :" />
+      <Label layoutX="145.0" layoutY="269.0" text="Maladie Chronique :" />
+      <Label layoutX="145.0" layoutY="321.0" text="Traitement :" />
+      <Label layoutX="347.0" layoutY="14.0" text="Fiche detaillee du client">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="NomCl" layoutX="355.0" layoutY="76.0" text="Label" />
+      <Label fx:id="PrenomCl" layoutX="355.0" layoutY="119.0" text="Label" />
+      <Label fx:id="AgeCl" layoutX="355.0" layoutY="162.0" text="Label" />
+      <Label fx:id="NumCl" layoutX="355.0" layoutY="215.0" text="Label" />
+      <Label fx:id="MaladieCl" layoutX="355.0" layoutY="269.0" text="Label" />
+      <Label fx:id="TraitementCl" layoutX="355.0" layoutY="321.0" text="Label" />
+      <Button layoutX="60.0" layoutY="423.0" mnemonicParsing="false" onAction="#retour" text="Retour" />
+   </children>
+</AnchorPane>

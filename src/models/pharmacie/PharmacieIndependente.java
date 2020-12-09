@@ -20,4 +20,9 @@ public class PharmacieIndependente extends Pharmacie {
 
 	public PharmacieIndependente() {
 	}
+	public String toString() {
+		String info = super.toString();
+		info += "Compte Bancaire Classique:\t"+((compteBancaireClassique!=null)?compteBancaireClassique.getSolde():"Aucun")+"\n";
+		return info;
+	}
 }

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import controllers.PharmacieController;
 import models.pharmacie.Pharmacie;
+import models.pharmacie.PharmacieFranchisee;
 
 public class PharmacieView extends View {
 
@@ -17,6 +18,16 @@ public class PharmacieView extends View {
 		Menu menuPrincipale = new Menu();
 		menuPrincipale.ajouterElementMenu("Pharmacie Independente");
 		menuPrincipale.ajouterElementMenu("Pharmacie Franchise");
+		return menuPrincipale.openMenu();
+	}
+	public int addCompteBancairePharmacieFranchisee(PharmacieFranchisee pharmacieFranchisee) {
+		Menu menuPrincipale = new Menu();
+		boolean hasCBFranch = pharmacieFranchisee.getCompteBancaireFranchise() != null;
+		boolean hasCBCla =  pharmacieFranchisee.getCompteBancaireClassique()!= null;
+		if(hasCBCla || hasCBFranch) menuPrincipale.ajouterElementMenu("Aucun / Terminer");
+		menuPrincipale.ajouterElementMenu("Compte Classique");
+		menuPrincipale.ajouterElementMenu("Compte Franchise");
+		if(hasCBCla || hasCBFranch) return menuPrincipale.openMenu() - 1;
 		return menuPrincipale.openMenu();
 	}
 	public int selectPharmacie(String titre, ArrayList<Pharmacie> pharmacies, boolean aucune) {

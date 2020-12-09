@@ -1,2 +1,6 @@
-module pharmacie {
-}
+module Example {
+    requires javafx.fxml;
+    requires javafx.controls;
+
+    opens Main;
+} 

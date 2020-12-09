@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="513.0" prefWidth="851.0" style="-fx-background-color: #d9e4dd;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MenuController">
+    <children>
+        <Button fx:id="stockMedicament" layoutX="95.0" layoutY="244.0" mnemonicParsing="false" onAction="#StockMedicamentButtonClicked" prefHeight="66.0" prefWidth="276.0" style="-fx-background-radius: 25px; -fx-background-color: #79d70f;" text="Stock des Medicaments" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font></Button>
+        <Button fx:id="stockParapharm" layoutX="483.0" layoutY="244.0" mnemonicParsing="false" onAction="#StockProduitParapharmButtonClicked" prefHeight="66.0" prefWidth="307.0" style="-fx-background-radius: 25px; -fx-background-color: #79d70f;" text="Stock des produits Parapharmaceutiques" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font></Button>
+        <Button layoutX="43.0" layoutY="461.0" mnemonicParsing="false" onAction="#retourButtonClicked" style="-fx-background-radius: 25px; -fx-background-color: ec0101;" text="Retourner au Menu" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Button>
+      <AnchorPane prefHeight="142.0" prefWidth="851.0" style="-fx-background-color: #79d70f;">
+         <children>
+            <ImageView fitHeight="115.0" fitWidth="122.0" layoutX="157.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Logo-Pharmacie-1.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="330.0" layoutY="42.0" text="GOLDEN PHARMACIE" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="40.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+    </children>
+</AnchorPane>

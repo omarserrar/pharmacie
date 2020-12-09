@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MedicamentDetailController">
+   <children>
+      <Label layoutX="349.0" layoutY="14.0" text="Details du Medicament">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="292.0" layoutY="72.0" text="Nom du Medicament :" />
+      <Label layoutX="292.0" layoutY="173.0" text="Prix Unitaire :" />
+      <Label layoutX="292.0" layoutY="203.0" text="Date d'Expiration :" />
+      <Label layoutX="292.0" layoutY="235.0" text="Ordonnance :" />
+      <Label layoutX="292.0" layoutY="271.0" text="Numero de lot :" />
+      <Label layoutX="292.0" layoutY="301.0" text="Quantite :" />
+      <Label layoutX="292.0" layoutY="334.0" text="Production :" />
+      <Label layoutX="292.0" layoutY="410.0" text="Taux de Rembourcement :" />
+      <Label layoutX="292.0" layoutY="105.0" text="Type du Medicament :" />
+      <Label layoutX="292.0" layoutY="138.0" text="Mode de prise :" />
+      <Label fx:id="nomlbl" layoutX="510.0" layoutY="72.0" text="Label" />
+      <Label fx:id="prixlbl" layoutX="510.0" layoutY="173.0" text="Label" />
+      <Label fx:id="datelbl" layoutX="510.0" layoutY="203.0" text="Label" />
+      <Label fx:id="ordonnancelbl" layoutX="510.0" layoutY="235.0" text="Label" />
+      <Label fx:id="numlbl" layoutX="510.0" layoutY="271.0" text="Label" />
+      <Label fx:id="qtelbl" layoutX="510.0" layoutY="301.0" text="Label" />
+      <Label fx:id="prodlbl" layoutX="510.0" layoutY="334.0" text="Label" />
+      <Label fx:id="tauxlbl" layoutX="510.0" layoutY="410.0" text="Label" />
+      <Label fx:id="typelbl" layoutX="510.0" layoutY="105.0" text="Label" />
+      <Label fx:id="modelbl" layoutX="510.0" layoutY="138.0" text="Label" />
+      <Button layoutX="50.0" layoutY="444.0" mnemonicParsing="false" onAction="#retour" text="Retour" />
+      <Label fx:id="categorielbl" layoutX="292.0" layoutY="368.0" />
+      <Label fx:id="infolbl" layoutX="510.0" layoutY="368.0" />
+   </children>
+</AnchorPane>

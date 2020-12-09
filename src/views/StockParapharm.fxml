@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="850.0" style="-fx-background-color: #d9e4dd;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.StockParapharmController">
+    <children>
+        <Label layoutX="65.0" layoutY="185.0" text="Type " />
+        <Label layoutX="69.0" layoutY="241.0" text="Prix " />
+        <Label layoutX="69.0" layoutY="300.0" text="Quantite " />
+        <TextField fx:id="typeField" layoutX="148.0" layoutY="181.0" promptText="Type" style="-fx-background-radius: 10;" />
+        <TextField fx:id="prixField" layoutX="148.0" layoutY="237.0" promptText="Prix (DA)" style="-fx-background-radius: 10;" />
+        <TextField fx:id="quantiteField" layoutX="148.0" layoutY="296.0" promptText="Quantite" style="-fx-background-radius: 10;" />
+        <TextField fx:id="rechercheField" layoutX="495.0" layoutY="79.0" prefHeight="26.0" prefWidth="235.0" promptText="entrer le type du produit pour rechercher" style="-fx-background-radius: 10;" />
+        <TableView fx:id="produitParapharmTable" layoutX="417.0" layoutY="136.0" prefHeight="256.0" prefWidth="382.0">
+            <columns>
+                <TableColumn fx:id="nom" onEditCommit="#changeNomCellEvent" prefWidth="111.5999755859375" text="Nom" />
+                <TableColumn fx:id="type" onEditCommit="#changeTypeCellEvent" prefWidth="98.800048828125" text="Type" />
+                <TableColumn fx:id="prix" onEditCommit="#changePrixCellEvent" prefWidth="83.79998779296875" text="Prix" />
+            <TableColumn fx:id="quantite" onEditCommit="#changeQuantiteCellEvent" prefWidth="89.0" text="Quantite" />
+            </columns>
+        </TableView>
+        <Button layoutX="202.0" layoutY="379.0" mnemonicParsing="false" onAction="#ajouterButtonClicked" prefHeight="26.0" prefWidth="126.0" style="-fx-background-radius: 25; -fx-background-color: #2ec1ac;" text="Ajouter produit" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Button>
+        <Button layoutX="33.0" layoutY="24.0" mnemonicParsing="false" onAction="#retourButtonClicked" prefHeight="26.0" prefWidth="89.0" style="-fx-background-radius: 25; -fx-background-color: ec0101;" text="Retourner" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Button>
+        <Button layoutX="35.0" layoutY="379.0" mnemonicParsing="false" onAction="#supprimerButtonClicked" prefHeight="26.0" prefWidth="125.0" style="-fx-background-radius: 25; -fx-background-color: #ff4b5c;" text="Supprimer produit" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Button>
+      <Label layoutX="69.0" layoutY="136.0" text="Nom" />
+      <TextField fx:id="nomField" layoutX="148.0" layoutY="132.0" promptText="Nom" style="-fx-background-radius: 10;" />
+    </children>
+</AnchorPane>

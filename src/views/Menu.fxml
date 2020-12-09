@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="pane" prefHeight="506.0" prefWidth="852.0" style="-fx-background-color: #d9e4dd;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MenuController">
+    <children>
+        <Button fx:id="stock" layoutX="345.0" layoutY="154.0" mnemonicParsing="false" onAction="#stockButtonClicked" prefHeight="34.0" prefWidth="154.0" style="-fx-background-color: #79d70f; -fx-background-radius: 25px;" text="Gestion de Produit" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Button>
+        <Button fx:id="clients" layoutX="346.0" layoutY="215.0" mnemonicParsing="false" onAction="#clientButtonClicked" prefHeight="34.0" prefWidth="154.0" style="-fx-background-color: #79d70f; -fx-background-radius: 25px;" text="Gestion de Employes" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Button>
+         <Button fx:id="clients" layoutX="346.0" layoutY="215.0" mnemonicParsing="false" onAction="#clientButtonClicked" prefHeight="34.0" prefWidth="154.0" style="-fx-background-color: #79d70f; -fx-background-radius: 25px;" text="Gestion de Pharmacie" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Button>
+        <Button fx:id="commandes" layoutX="346.0" layoutY="335.0" mnemonicParsing="false" onAction="#commandesButtonClicked" prefHeight="34.0" prefWidth="153.0" style="-fx-background-color: #79d70f; -fx-background-radius: 25px;" text="Gestion de Commandes" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Button>
+        <Button fx:id="exit" layoutX="345.0" layoutY="393.0" mnemonicParsing="false" onAction="#exitButtonClicked" prefHeight="34.0" prefWidth="154.0" style="-fx-background-color: #79d70f; -fx-background-radius: 25px;" text="Quitter" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Button>
+        <Button fx:id="ventes" layoutX="345.0" layoutY="277.0" mnemonicParsing="false" onAction="#ventesButtonClicked" prefHeight="34.0" prefWidth="154.0" style="-fx-background-color: #79d70f; -fx-background-radius: 25px;" text="Gestion de Paiement" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Button>
+      <AnchorPane prefHeight="128.0" prefWidth="852.0" style="-fx-background-color: #79d70f;">
+         <children>
+            <Label layoutX="269.0" layoutY="27.0" prefHeight="73.0" prefWidth="418.0" text="GOLDEN PHARMACIE" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="40.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="105.0" fitWidth="111.0" layoutX="119.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Logo-Pharmacie-1.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+    </children>
+</AnchorPane>
